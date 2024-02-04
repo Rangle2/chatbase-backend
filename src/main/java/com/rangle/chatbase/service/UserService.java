@@ -26,6 +26,7 @@ public class UserService {
             String uid = decodedToken.getUid();
             String displayName = decodedToken.getName();
             String email = decodedToken.getEmail();
+            String avatar = decodedToken.getPicture();
 
             User savedUser = userRepository.findByFirebaseUid(uid);
             if (savedUser == null){
@@ -33,6 +34,7 @@ public class UserService {
                 user.setFirebaseUid(uid);
                 user.setUsername(displayName);
                 user.setEmail(email);
+                user.setAvatar(avatar);
 
                 // Save user in Database
                 return userRepository.save(user);

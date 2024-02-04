@@ -18,4 +18,7 @@ public class User {
 
     @Column(name = "email", nullable = false, unique = true)
     private String email;
+
+    @Column(name = "userAvatar", nullable = false, unique = true)
+    private String avatar;
 }
